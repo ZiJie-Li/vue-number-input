@@ -31,6 +31,7 @@
       :disabled="disabled || (!decreasable && !increasable)"
       :placeholder="placeholder"
       autocomplete="off"
+      @keyup="change"
       @change="change"
       @paste="paste"
     >

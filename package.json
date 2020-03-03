@@ -1,8 +1,8 @@
 {
-  "name": "@chenfengyuan/vue-number-input",
-  "version": "1.2.1",
-  "description": "Number input component for Vue.js.",
-  "main": "dist/vue-number-input.common.js",
+  "name": "@royalmar/vue-input-number",
+  "version": "0.0.1",
+  "description": "Number input component for Vue.js (from https://fengyuanchen.github.io/vue-number-input)",
+  "main": "src/index.js",
   "module": "dist/vue-number-input.esm.js",
   "browser": "dist/vue-number-input.js",
   "files": [
@@ -43,6 +43,13 @@
     "name": "Chen Fengyuan",
     "url": "https://chenfengyuan.com/"
   },
+  "contributors": [
+    {
+      "author": "Li ZiJie",
+      "email": "royal-mar@hotmail.com",
+      "url": "https://zijie-li.github.io/"
+    }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/fengyuanchen/vue-number-input/issues"
