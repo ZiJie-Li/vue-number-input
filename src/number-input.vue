@@ -176,7 +176,7 @@ export default {
 
   methods: {
     /**
-     * Change event handler.
+     * Keyup event handler.
      * @param {string} value - The new value.
      */
     keyup(event) {
