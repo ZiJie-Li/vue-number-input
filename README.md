@@ -22,7 +22,7 @@ dist/
 ### Installation
 
 ```shell
-npm install vue @chenfengyuan/vue-number-input
+npm install vue @royalmar/vue-number-input
 ```
 
 In browser:
@@ -36,7 +36,7 @@ In browser:
 
 ```js
 import Vue from 'vue';
-import VueNumberInput from '@chenfengyuan/vue-number-input';
+import VueNumberInput from '@royalmar/vue-number-input';
 
 Vue.use(VueNumberInput);
 // Or
