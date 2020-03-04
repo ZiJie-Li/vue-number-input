@@ -1,11 +1,11 @@
 /*!
- * vue-input-number v0.0.1
+ * vue-input-number v0.0.6
  * https://fengyuanchen.github.io/vue-number-input
  *
  * Copyright 2018-present Chen Fengyuan
  * Released under the MIT license
  *
- * Date: 2020-03-03T09:45:51.237Z
+ * Date: 2020-03-04T03:59:38.726Z
  */
 
 (function (global, factory) {
@@ -221,6 +221,14 @@
        * Change event handler.
        * @param {string} value - The new value.
        */
+      keyup: function keyup(event) {
+        this.setValue(Math.min(this.max, Math.max(this.min, event.target.value)), 'keyin');
+      },
+
+      /**
+       * Change event handler.
+       * @param {string} value - The new value.
+       */
       change: function change(event) {
         this.setValue(Math.min(this.max, Math.max(this.min, event.target.value)));
       },
@@ -272,6 +280,7 @@
        * @param {number} value - The new value to set.
        */
       setValue: function setValue(value) {
+        var event = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'change';
         var oldValue = this.currentValue;
         var newValue = this.rounded ? Math.round(value) : value;
 
@@ -286,7 +295,7 @@
           this.$refs.input.value = newValue;
         }
 
-        this.$emit('change', newValue, oldValue);
+        this.$emit(event, newValue, oldValue);
       }
     }
   };
@@ -477,7 +486,7 @@
         "value": _vm.currentValue
       },
       on: {
-        "keyup": _vm.change,
+        "keyup": _vm.keyup,
         "change": _vm.change,
         "paste": _vm.paste
       }
@@ -499,8 +508,8 @@
 
   var __vue_inject_styles__ = function __vue_inject_styles__(inject) {
     if (!inject) return;
-    inject("data-v-7d486518_0", {
-      source: ".number-input[data-v-7d486518]{display:block;font-size:0;max-width:100%;overflow:hidden;position:relative}.number-input__button[data-v-7d486518]{background-color:#fff;border:0;border-radius:.25rem;bottom:1px;position:absolute;top:1px;width:2.5rem;z-index:1}.number-input__button[data-v-7d486518]:focus{outline:0}.number-input__button[data-v-7d486518]:hover::after,.number-input__button[data-v-7d486518]:hover::before{background-color:#0074d9}.number-input__button[data-v-7d486518]:disabled{opacity:.65}.number-input__button[data-v-7d486518]:disabled::after,.number-input__button[data-v-7d486518]:disabled::before{background-color:#ddd}.number-input__button[data-v-7d486518]::after,.number-input__button[data-v-7d486518]::before{background-color:#111;content:\"\";left:50%;position:absolute;top:50%;transform:translate(-50%,-50%);transition:background-color .15s}.number-input__button[data-v-7d486518]::before{height:1px;width:50%}.number-input__button[data-v-7d486518]::after{height:50%;width:1px}.number-input__button--minus[data-v-7d486518]{border-bottom-right-radius:0;border-right:1px solid #ddd;border-top-right-radius:0;left:1px}.number-input__button--minus[data-v-7d486518]::after{visibility:hidden}.number-input__button--plus[data-v-7d486518]{border-bottom-left-radius:0;border-left:1px solid #ddd;border-top-left-radius:0;right:1px}.number-input__input[data-v-7d486518]{-moz-appearance:textfield;background-color:#fff;border:1px solid #ddd;border-radius:.25rem;display:block;font-size:1rem;line-height:1.5;max-width:100%;min-height:1.5rem;min-width:3rem;padding:.4375rem .875rem;transition:border-color .15s;width:100%}.number-input__input[data-v-7d486518]::-webkit-inner-spin-button,.number-input__input[data-v-7d486518]::-webkit-outer-spin-button{-webkit-appearance:none}.number-input__input[data-v-7d486518]:focus{border-color:#0074d9;outline:0}.number-input__input[data-v-7d486518]:disabled,.number-input__input[readonly][data-v-7d486518]{background-color:#f8f8f8}.number-input--inline[data-v-7d486518]{display:inline-block}.number-input--inline>input[data-v-7d486518]{display:inline-block;width:12.5rem}.number-input--center>input[data-v-7d486518]{text-align:center}.number-input--controls>input[data-v-7d486518]{padding-left:3.375rem;padding-right:3.375rem}.number-input--small>input[data-v-7d486518]{border-radius:.1875rem;font-size:.875rem;padding:.25rem .5rem}.number-input--small.number-input--inline>input[data-v-7d486518]{width:10rem}.number-input--small.number-input--controls>button[data-v-7d486518]{width:2rem}.number-input--small.number-input--controls>input[data-v-7d486518]{padding-left:2.5rem;padding-right:2.5rem}.number-input--large>input[data-v-7d486518]{border-radius:.3125rem;font-size:1.25rem;padding:.5rem 1rem}.number-input--large.number-input--inline>input[data-v-7d486518]{width:15rem}.number-input--large.number-input--controls>button[data-v-7d486518]{width:3rem}.number-input--large.number-input--controls>input[data-v-7d486518]{padding-left:4rem;padding-right:4rem}",
+    inject("data-v-b67e3bbe_0", {
+      source: ".number-input[data-v-b67e3bbe]{display:block;font-size:0;max-width:100%;overflow:hidden;position:relative}.number-input__button[data-v-b67e3bbe]{background-color:#fff;border:0;border-radius:.25rem;bottom:1px;position:absolute;top:1px;width:2.5rem;z-index:1}.number-input__button[data-v-b67e3bbe]:focus{outline:0}.number-input__button[data-v-b67e3bbe]:hover::after,.number-input__button[data-v-b67e3bbe]:hover::before{background-color:#0074d9}.number-input__button[data-v-b67e3bbe]:disabled{opacity:.65}.number-input__button[data-v-b67e3bbe]:disabled::after,.number-input__button[data-v-b67e3bbe]:disabled::before{background-color:#ddd}.number-input__button[data-v-b67e3bbe]::after,.number-input__button[data-v-b67e3bbe]::before{background-color:#111;content:\"\";left:50%;position:absolute;top:50%;transform:translate(-50%,-50%);transition:background-color .15s}.number-input__button[data-v-b67e3bbe]::before{height:1px;width:50%}.number-input__button[data-v-b67e3bbe]::after{height:50%;width:1px}.number-input__button--minus[data-v-b67e3bbe]{border-bottom-right-radius:0;border-right:1px solid #ddd;border-top-right-radius:0;left:1px}.number-input__button--minus[data-v-b67e3bbe]::after{visibility:hidden}.number-input__button--plus[data-v-b67e3bbe]{border-bottom-left-radius:0;border-left:1px solid #ddd;border-top-left-radius:0;right:1px}.number-input__input[data-v-b67e3bbe]{-moz-appearance:textfield;background-color:#fff;border:1px solid #ddd;border-radius:.25rem;display:block;font-size:1rem;line-height:1.5;max-width:100%;min-height:1.5rem;min-width:3rem;padding:.4375rem .875rem;transition:border-color .15s;width:100%}.number-input__input[data-v-b67e3bbe]::-webkit-inner-spin-button,.number-input__input[data-v-b67e3bbe]::-webkit-outer-spin-button{-webkit-appearance:none}.number-input__input[data-v-b67e3bbe]:focus{border-color:#0074d9;outline:0}.number-input__input[data-v-b67e3bbe]:disabled,.number-input__input[readonly][data-v-b67e3bbe]{background-color:#f8f8f8}.number-input--inline[data-v-b67e3bbe]{display:inline-block}.number-input--inline>input[data-v-b67e3bbe]{display:inline-block;width:12.5rem}.number-input--center>input[data-v-b67e3bbe]{text-align:center}.number-input--controls>input[data-v-b67e3bbe]{padding-left:3.375rem;padding-right:3.375rem}.number-input--small>input[data-v-b67e3bbe]{border-radius:.1875rem;font-size:.875rem;padding:.25rem .5rem}.number-input--small.number-input--inline>input[data-v-b67e3bbe]{width:10rem}.number-input--small.number-input--controls>button[data-v-b67e3bbe]{width:2rem}.number-input--small.number-input--controls>input[data-v-b67e3bbe]{padding-left:2.5rem;padding-right:2.5rem}.number-input--large>input[data-v-b67e3bbe]{border-radius:.3125rem;font-size:1.25rem;padding:.5rem 1rem}.number-input--large.number-input--inline>input[data-v-b67e3bbe]{width:15rem}.number-input--large.number-input--controls>button[data-v-b67e3bbe]{width:3rem}.number-input--large.number-input--controls>input[data-v-b67e3bbe]{padding-left:4rem;padding-right:4rem}",
       map: undefined,
       media: undefined
     });
@@ -508,7 +517,7 @@
   /* scoped */
 
 
-  var __vue_scope_id__ = "data-v-7d486518";
+  var __vue_scope_id__ = "data-v-b67e3bbe";
   /* module identifier */
 
   var __vue_module_identifier__ = undefined;
