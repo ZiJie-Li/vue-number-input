@@ -8,7 +8,7 @@
 <template>
   <div>
     <p>Value: {{ value }}</p>
-    <number-input v-model="value" :min="1" :max="10" inline controls></number-input>
+    <number-input v-model="value" :min="1" :max="10" inline controls @keyin="keyin"></number-input>
   </div>
 </template>
 
@@ -19,6 +19,11 @@
         value: 1,
       };
     },
+    methods: {
+      keyin(newValue) {
+        this.value = newValue;
+      }
+    }
   };
 </script>
 ```
@@ -143,3 +148,4 @@ The input is not inputtable, but still allow to change the value by controls.
 | Name | Parameters | Description |
 | --- | --- | --- |
 | change | `(newValue, oldValue)` | Fire when the value is changed. |
+| keyin  | `(newValue, oldValue)` | Fire when the value is changed. |

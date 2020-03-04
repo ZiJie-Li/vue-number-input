@@ -31,7 +31,7 @@
       :disabled="disabled || (!decreasable && !increasable)"
       :placeholder="placeholder"
       autocomplete="off"
-      @keyup="change"
+      @keyup="keyup"
       @change="change"
       @paste="paste"
     >
@@ -179,6 +179,14 @@ export default {
      * Change event handler.
      * @param {string} value - The new value.
      */
+    keyup(event) {
+      this.setValue(Math.min(this.max, Math.max(this.min, event.target.value)), 'keyin');
+    },
+
+    /**
+     * Change event handler.
+     * @param {string} value - The new value.
+     */
     change(event) {
       this.setValue(Math.min(this.max, Math.max(this.min, event.target.value)));
     },
@@ -235,7 +243,7 @@ export default {
      * Set new value and dispatch change event.
      * @param {number} value - The new value to set.
      */
-    setValue(value) {
+    setValue(value, event = 'change') {
       const oldValue = this.currentValue;
       let newValue = this.rounded ? Math.round(value) : value;
 
@@ -250,7 +258,7 @@ export default {
         this.$refs.input.value = newValue;
       }
 
-      this.$emit('change', newValue, oldValue);
+      this.$emit(event, newValue, oldValue);
     },
   },
 };
