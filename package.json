@@ -1,6 +1,6 @@
 {
   "name": "@royalmar/vue-input-number",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Number input component for Vue.js (from https://fengyuanchen.github.io/vue-number-input)",
   "main": "src/index.js",
   "module": "dist/vue-number-input.esm.js",
@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fengyuanchen/vue-number-input.git"
+    "url": "git+https://github.com/ZiJie-Li/vue-number-input.git"
   },
   "keywords": [
     "number",
