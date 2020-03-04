@@ -31,7 +31,7 @@
       :disabled="disabled || (!decreasable && !increasable)"
       :placeholder="placeholder"
       autocomplete="off"
-      @keyup="keyup"
+      @input="input"
       @change="change"
       @paste="paste"
     >
@@ -179,7 +179,7 @@ export default {
      * Keyup event handler.
      * @param {string} value - The new value.
      */
-    keyup(event) {
+    input(event) {
       this.setValue(Math.min(this.max, Math.max(this.min, event.target.value)), 'keyin');
     },
 
